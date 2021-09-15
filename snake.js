@@ -36,9 +36,10 @@ export function expandSnake(amount) {
     newSegments +=amount
 }
 
-export function onSnake(position){
+export function onSnake(position, {ignoreHead = false} = {}){
     //if the position is on the snake
-    return snakeBody.some(segment => {
+    return snakeBody.some((segment, index) => {
+        if (ignoreHead && index === 0) return false
     return equalPositions(segment, position)       
     })
 }
@@ -47,6 +48,9 @@ export function getSnakeHead(){
     return snakeBody[0]
 }
 
+export function snakeIntersection(){
+    return onSnake(snakeBody[0], {ignoreHead: true})
+}
 
 function equalPositions(pos1, pos2){
     return pos1.x === pos2.x && pos1.y === pos2.y
