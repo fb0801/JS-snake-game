@@ -1,6 +1,6 @@
-
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED} from './snake.js'
 let lastRenderTime =0
-const SNAKE_SPEED = 1
+
 
 function main(currentTime){
     window.requestAnimationFrame(main)
@@ -9,10 +9,25 @@ function main(currentTime){
 
 
 
-     console.log('Render')
+    // console.log('Render')
      lastRenderTime = currentTime
+
+
+     update()
+     draw()
     }
   
   
 
 window.requestAnimationFrame(main)
+
+
+function update(){
+    //update food and snake
+    updateSnake()
+}
+
+function draw(){
+//draw the snake and food
+drawSnake()
+}
