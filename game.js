@@ -1,5 +1,8 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED} from './snake.js'
+
 let lastRenderTime =0
+const gameBoard = document.getElementById('game-board')
+
 
 
 function main(currentTime){
@@ -8,8 +11,6 @@ function main(currentTime){
      if (secondsSinceLastRendor < 1 / SNAKE_SPEED) return
 
 
-
-    // console.log('Render')
      lastRenderTime = currentTime
 
 
@@ -29,5 +30,7 @@ function update(){
 
 function draw(){
 //draw the snake and food
-drawSnake()
+    drawSnake(gameBoard)
+
+
 }
