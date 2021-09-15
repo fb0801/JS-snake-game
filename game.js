@@ -8,6 +8,11 @@ let gameOver = false
 
 
 function main(currentTime){
+
+if (gameOver){
+    return alert('You lose')
+}
+
     window.requestAnimationFrame(main)
     const secondsSinceLastRendor = (currentTime - lastRenderTime) / 1000
      if (secondsSinceLastRendor < 1 / SNAKE_SPEED) return
