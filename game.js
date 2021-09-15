@@ -30,6 +30,8 @@ function update(){
 
 function draw(){
 //draw the snake and food
+
+gameBoard.innerHTML = ''//clear our view of the snake previous body
     drawSnake(gameBoard)
 
 
